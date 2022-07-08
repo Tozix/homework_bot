@@ -83,18 +83,16 @@ def check_response(response):
     то функция должна вернуть список домашних работ (он может быть и пустым),
     доступный в ответе API по ключу 'homeworks'.
     """
-
     if type(response) is not dict:
         raise TypeError('Ответ API отличен от словаря')
     try:
         list_homeworks = response['homeworks']
     except KeyError:
         raise KeyError('Ошибка словаря по ключу homeworks')
-    try:
-        homework = list_homeworks[0]
-    except IndexError:
-        raise IndexError('Список домашних работ пуст')
-    return homework
+    if type(list_homeworks) is not list:
+        raise TypeError(
+            'Оттвет от API под ключом `homeworks` домашки приходят не в виде списка')
+    return list_homeworks
 
 
 def parse_status(homework):
@@ -145,7 +143,7 @@ def main():
     while True:
         try:
             response = get_api_answer(current_timestamp)
-            homeworks = check_response(response)
+            homeworks = check_response(response) #Список домашних работ
             if len(homeworks) > 0:
                 for homework in homeworks:
                     message = parse_status(homework)
