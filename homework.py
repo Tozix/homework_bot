@@ -58,7 +58,7 @@ HOMEWORK_STATUSES: Dict[str, str] = {
 
 
 def check_tokens() -> bool:
-    """
+    """.
     Проверяет доступность переменных окружения,
     которые необходимы для работы программы.
     Если отсутствует хотя бы одна переменная окружения —
@@ -148,7 +148,7 @@ def parse_status(homework: Dict[str, str]) -> str:
 
 
 def send_message(bot, message: str) -> None:
-    """
+    """.
     Отправляет сообщение в Telegram чат, определяемый переменной
     окружения TELEGRAM_CHAT_ID.
     Принимает на вход два параметра:
