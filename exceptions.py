@@ -1,19 +1,23 @@
 
-class ApiStatusCodeException(Exception):
+class ApiStatusCodeError(Exception):
     """Исключение для проверки статуса в ответе API."""
+
     pass
 
 
 class UndocumentedStatusError(Exception):
     """Недокументированный статус."""
+
     pass
 
 
-class RequestExceptionError(Exception):
+class RequestError(Exception):
     """Ошибка запроса."""
+
     pass
 
 
-class SendMessageException(Exception):
+class SendMessageError(Exception):
     """Исключение для проверки отправки сообщений."""
+
     pass
