@@ -1,10 +1,3 @@
-
-class ApiStatusCodeError(Exception):
-    """Исключение для проверки статуса в ответе API."""
-
-    pass
-
-
 class UndocumentedStatusError(Exception):
     """Недокументированный статус."""
 
@@ -13,6 +6,24 @@ class UndocumentedStatusError(Exception):
 
 class RequestError(Exception):
     """Ошибка запроса."""
+
+    pass
+
+
+class EndPointError(Exception):
+    """Ошибка Endpoint."""
+
+    pass
+
+
+class ListEmptyError(Exception):
+    """Список работ пуст."""
+
+    pass
+
+
+class DictEmptyError(Exception):
+    """Словарь пуст."""
 
     pass
 
