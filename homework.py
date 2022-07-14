@@ -59,13 +59,7 @@ def check_tokens() -> bool:
     logger.debug(
         'Проверяем доступность переменных окружения'
     )
-    var_list = [PRACTICUM_TOKEN, TELEGRAM_TOKEN,
-                TELEGRAM_CHAT_ID]
-    result = True
-    for name in var_list:
-        if name is None:
-            result = False
-    return result
+    return all([PRACTICUM_TOKEN, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID])
 
 
 def get_api_answer(current_timestamp: int) -> dict:
@@ -210,8 +204,8 @@ if __name__ == '__main__':
     logging.basicConfig(
         format='[%(levelname)s] %(funcName)s %(lineno)s %(message)s',
         filename='main.log', filemode='w',
-        level=logging.INFO)
-
+        level=logging.INFO
+    )
     try:
         main()
     except KeyboardInterrupt:
