@@ -197,7 +197,8 @@ def main() -> None:
             if error_message != message:
                 send_message(bot, message)
                 error_message = message
-        time.sleep(RETRY_TIME)
+        finally:
+            time.sleep(RETRY_TIME)
 
 
 if __name__ == '__main__':
